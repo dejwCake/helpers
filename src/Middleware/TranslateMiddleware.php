@@ -8,7 +8,7 @@ class TranslateMiddleware
 {
     public function __invoke($request, $response, $next)
     {
-        //TODO move to Standard Web
+        //TODO remove, forms according required requests
         $data = $request->getParsedBody();
         if(isset($data['_translations'][Configure::read('App.defaultLocale')])) {
             foreach ($data['_translations'][Configure::read('App.defaultLocale')] as $field => $value) {
