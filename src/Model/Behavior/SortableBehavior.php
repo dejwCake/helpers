@@ -27,6 +27,7 @@ class SortableBehavior extends Behavior
 {
 
 //    TODO change from tree to sort
+//    TODO add scope
     /**
      * Cached copy of the first column in a table's primary key.
      *
