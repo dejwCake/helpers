@@ -16,6 +16,9 @@ class SluggableBehavior extends Behavior
         'field' => 'title',
         'slug' => 'slug',
         'replacement' => '-',
+        'implementedFinders' => [
+            'slug' => 'findSlug',
+        ]
     ];
 
     public function slug(Entity $entity)
