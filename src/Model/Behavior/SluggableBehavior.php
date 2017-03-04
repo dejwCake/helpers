@@ -47,5 +47,7 @@ class SluggableBehavior extends Behavior
     public function findSlug(Query $query, array $options)
     {
         return $query->where(['slug' => $options['slug']]);
+//        debug($this->_table);die;
+//        return $query->where([$this->_table->translationField('slug')  => $options['slug']]);
     }
 }
