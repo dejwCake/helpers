@@ -53,13 +53,15 @@ class SluggableBehavior extends Behavior
     public function findSlug(Query $query, array $options)
     {
         if ($this->_table->hasBehavior('Translate')) {
-            if(I18n::locale() == Configure::read('App.defaultLocale')) {
-                return $query->where(['slug' => $options['slug']]);
-            } else {
-                return $query->where([$this->_table->translationField('slug')  => $options['slug']]);
+            $fields = $this->_table->behaviors()->get('Translate')->config('fields');
+            if (in_array('slug', $fields)) {
+                if (I18n::locale() == Configure::read('App.defaultLocale')) {
+                    return $query->where(['slug' => $options['slug']]);
+                } else {
+                    return $query->where([$this->_table->translationField('slug') => $options['slug']]);
+                }
             }
-        } else {
-            return $query->where(['slug' => $options['slug']]);
         }
+        return $query->where(['slug' => $options['slug']]);
     }
 }
