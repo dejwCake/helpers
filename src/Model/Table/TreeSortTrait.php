@@ -15,11 +15,11 @@ trait TreeSortTrait
     public function setNewTreeSort($items)
     {
         if(!$this->hasBehavior('Tree')) {
-            throw new MethodNotAllowedException(__('Model has to have Tree Behavior to use this.'));
+            throw new MethodNotAllowedException(__d('dejw_cake_helpers', 'Model has to have Tree Behavior to use this.'));
         }
 
         if (!is_array($items)) {
-            throw new BadRequestException(__('You must pass an array to setNewTreeSort'));
+            throw new BadRequestException(__d('dejw_cake_helpers', 'You must pass an array to setNewTreeSort.'));
         }
 
         foreach ($items as $item) {

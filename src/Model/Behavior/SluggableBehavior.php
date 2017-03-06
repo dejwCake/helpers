@@ -31,7 +31,7 @@ class SluggableBehavior extends Behavior
 
     public function slug(Entity $entity)
     {
-        $config = $this->config();
+        $config = $this->getConfig();
         $value = $entity->get($config['field']);
         $entity->set($config['slug'], mb_strtolower(Text::slug($value, $config['replacement'])));
         if ($this->_table->hasBehavior('Translate')) {
