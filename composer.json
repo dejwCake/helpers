@@ -1,7 +1,23 @@
 {
-    "name": "DejwCake/Helpers",
+    "name": "dejw-cake/helpers",
     "description": "DejwCake/Helpers plugin for CakePHP",
     "type": "cakephp-plugin",
+    "keywords": [
+        "helper",
+        "slugable",
+        "enable",
+        "translate",
+        "sortabe",
+        "tree"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "DejwCake",
+            "email": "github@dejw.sk",
+            "role": "Author"
+        }
+    ],
     "require": {
         "php": ">=5.5.9",
         "cakephp/cakephp": ">=3.3.2 <4.0.0"
